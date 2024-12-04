@@ -22,4 +22,18 @@ mod tests {
         let result = vertical_line_exists(points);
         assert_eq!(result, false)
     }
+
+    #[test]
+    fn it_panics_with_even_elements() {
+        let points = vec![(1, 1), (2, 2), (4, 5)];
+        let result = vertical_line_exists(points);
+        assert_eq!(result, false);
+    }
+
+    #[test]
+    fn it_panics_with_even_simmetrical_elements() {
+        let points = vec![(1, 1), (2, 2), (3, 1)];
+        let result = vertical_line_exists(points);
+        assert_eq!(result, false);
+    }
 }
